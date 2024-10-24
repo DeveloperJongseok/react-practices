@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span id="total-click">Total Click: 0</span>
+    <button id="btn">Click</button>
+  </body>
+  <script>
+    const btn = document.getElementById('btn');
+    const totalClick = document.getElementById('total-click');
+
+    let count = 0;
+
+    function handleClick() {
+      count += 1;
+      totalClick.innerText = `Total Click: ${count}`;
+    }
+    btn.addEventListener('click', handleClick);
+  </script>
+</html>
