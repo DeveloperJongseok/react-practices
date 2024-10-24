@@ -11,27 +11,45 @@
   <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js
   "></script>
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-  <script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
     const root = document.getElementById('root');
-    const h3 = React.createElement(
-      'h3',
-      { id: 'total-count' },
-      'Total Count: 0'
-    );
+    const H3 = () => <h3 id="total-count">Total Count: 0</h3>;
+    // const h3 = React.createElement(
+    //   'h3',
+    //   { id: 'total-count' },
+    //   'Total Count: 0'
+    // );
     let count = 0;
-    const button = React.createElement(
-      'button',
-      {
-        id: 'btn',
-        onClick: () => {
+    const Btn = () => (
+      <button
+        id="btn"
+        onClick={() => {
           count += 1;
           console.log(count);
-        },
-      },
-      'click'
+        }}
+      >
+        Click
+      </button>
     );
-    const container = React.createElement('div', null, [h3, button]);
-
-    ReactDOM.render(container, root);
+    // const button = React.createElement(
+    //   'button',
+    //   {
+    //     id: 'btn',
+    //     onClick: () => {
+    //       count += 1;
+    //       console.log(count);
+    //     },
+    //   },
+    //   'click'
+    // );
+    // const container = React.createElement('div', null, [h3, btn]);
+    const Container = () => (
+      <div>
+        <H3 />
+        <Btn />
+      </div>
+    );
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
